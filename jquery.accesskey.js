@@ -7,18 +7,18 @@
  * @author      Gabriel Izaias <gabriel.izaias@gmail.com>
  */
 ;(function($){
+    var os = (function(){
+            var ua = navigator.userAgent.toLowerCase();
+            return ua.indexOf('macintosh') !== -1 ? 'machintosh' :
+                   ua.indexOf('windows') !== -1 ? 'windows' :
+                   ua.indexOf('linux') !== -1 ? 'linux' :
+                   undefined;
+        })(),
+        newTitle = '';
     $('[accesskey]').each(function(){
         var element = $(this),
             accesskey = element.attr('accesskey'),
-            title = element.attr('title') || '',
-            os = (function(){
-                var agent = navigator.userAgent.toLowerCase();
-                return agent.indexOf('macintosh') !== -1 ? 'machintosh' :
-                       agent.indexOf('windows') !== -1 ? 'windows' :
-                       agent.indexOf('linux') !== -1 ? 'linux' :
-                       undefined;
-            })(),
-            newTitle = '';
+            title = element.attr('title') || '';
 
         switch(os){
             case 'windows' :
