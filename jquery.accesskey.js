@@ -6,7 +6,7 @@
  *
  * @author      Gabriel Izaias <gabriel.izaias@gmail.com>
  */
-;(function($){
+;(function(window, undefined){
     "use strict";
 
     var
@@ -15,7 +15,7 @@
          *
          * @type {string}
          */
-        ua = navigator.userAgent.toLowerCase(),
+        ua = window.navigator.userAgent.toLowerCase(),
 
         /**
          * Keystroke combination for every browser
@@ -63,12 +63,17 @@
                     || !/compatible/.test(ua) && /(firefox)(?:.*firefox)?[ \/]([\w.]+)/.exec(ua)
                     || []
             return browserArray[1] || undefined;
-        }())
+        }()),
 
-    // Loop trought every element that has an accesskey attribute defined
-    $('[accesskey]').each(function(){
-        var accesskey = this.accessKey.split(' ') || ''
-        this.title += ' ' + keystrokes[os][browser].replace( /%s/, accesskey[0] )
-    });
+        items = window.document.querySelectorAll('[accesskey]') || [],
+        accesskey,
+        i;
 
-})(jQuery);
+    for (i = items.length - 1; i >= 0; i--) {
+        accesskey = items[i].accessKey.split(' ') || ''
+        items[i].title += ' ' + keystrokes[os][browser].replace( /%s/, accesskey[0] )
+
+        console.log(items[i].title)
+    }
+
+})(window);
