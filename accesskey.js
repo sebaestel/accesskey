@@ -72,8 +72,6 @@
     for (i = items.length - 1; i >= 0; i--) {
         accesskey = items[i].accessKey.split(' ') || ''
         items[i].title += ' ' + keystrokes[os][browser].replace( /%s/, accesskey[0] )
-
-        console.log(items[i].title)
     }
 
 })(window);
