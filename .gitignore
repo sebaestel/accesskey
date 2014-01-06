@@ -1,6 +1,7 @@
 # Compiled Python files
 *.pyc
 codekit-config.json
+node_modules
 
 # Folder view configuration files
 .DS_Store
