@@ -14,7 +14,7 @@ Adds a hint to the title attribute of elements that support accesskey shortcuts.
 
 ### How to use
 
-Copy `jquery.accesskey.js` to your scripts folder and then add it to your project. Done!
+Copy `accesskey.min.js` to your scripts folder and then add it to your project. Done!
 
 ## License
 
