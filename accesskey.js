@@ -1,4 +1,4 @@
- /**
+/**
  * Accesskey user support
  *
  * Adds a hint to the title attribute of elements that support

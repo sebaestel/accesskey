@@ -1,0 +1,19 @@
+{
+    "name": "accesskey",
+    "title": "Accesskey",
+    "description": "Adds a hint to the title attribute of elements that support accesskey shortcuts",
+    "version": "1.0.0",
+    "main": "accesskey.js",
+    "author": {
+        "name": "Gabriel Izaias",
+        "url": "http://gabrielizias.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gabrielizias/accesskey.git"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-uglify": "~0.2.7"
+    }
+}
