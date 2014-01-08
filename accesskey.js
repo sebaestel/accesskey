@@ -28,13 +28,13 @@
                 chrome  : '[alt+%s]',
                 safari  : '[alt+%s]',
                 firefox : '[alt+shift+%s]',
-                opera   : '[shif+esc+%s]'
+                opera   : '[shift+esc+%s]'
             },
             machintosh : {
                 chrome  : '[ctrl+alt+%s]',
                 safari  : '[ctrl+alt+%s]',
                 firefox : '[ctrl+alt+%s]',
-                opera   : '[shif+esc+%s]'
+                opera   : '[shift+esc+%s]'
             }
         },
 
