@@ -6,7 +6,7 @@
  *
  * @author      Gabriel Izaias <gabriel.izaias@gmail.com>
  */
-;(function(window, undefined){
+!(function (window, undefined) {
     "use strict";
 
     var
@@ -43,7 +43,7 @@
          *
          * @type {string}
          */
-        os = (function(){
+        os = (function () {
             return ua.indexOf('macintosh') !== -1 ? 'machintosh' :
                    ua.indexOf('windows') !== -1 ? 'windows' :
                    ua.indexOf('linux') !== -1 ? 'linux' :
@@ -55,23 +55,17 @@
          *
          * @type {string}
          */
-        browser = (function(){
-            var browserArray = /(chrome)(?:.*chrome)?[ \/]([\w.]+)/.exec(ua)
-                    || /(safari)(?:.*version)?[ \/]([\w.]+)/.exec(ua)
-                    || /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(ua)
-                    || /(ie) ([\w.]+)/.exec(ua)
-                    || !/compatible/.test(ua) && /(firefox)(?:.*firefox)?[ \/]([\w.]+)/.exec(ua)
-                    || []
+        browser = (function () {
+            var browserArray = /(chrome)(?:.*chrome)?[ \/]([\w.]+)/.exec(ua) || /(safari)(?:.*version)?[ \/]([\w.]+)/.exec(ua) || /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(ua) || /(ie) ([\w.]+)/.exec(ua) || !/compatible/.test(ua) && /(firefox)(?:.*firefox)?[ \/]([\w.]+)/.exec(ua) || []
             return browserArray[1] || undefined;
         }()),
-
         items = window.document.querySelectorAll('[accesskey]') || [],
         accesskey,
         i;
 
     for (i = items.length - 1; i >= 0; i--) {
         accesskey = items[i].accessKey.split(' ') || ''
-        items[i].title += ' ' + keystrokes[os][browser].replace( /%s/, accesskey[0] )
+        items[i].title += ' ' + keystrokes[os][browser].replace(/%s/, accesskey[0])
     }
 
 })(window);
