@@ -35,6 +35,11 @@
                 safari  : '[ctrl+alt+%s]',
                 firefox : '[ctrl+alt+%s]',
                 opera   : '[shift+esc+%s]'
+            },
+            linux : {
+                chrome  : '[alt+%s]',
+                firefox : '[alt+shift+%s]',
+                opera   : '[shift+esc+%s]'
             }
         },
 
