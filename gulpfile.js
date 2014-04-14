@@ -1,10 +1,11 @@
+"use strict";
+
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     bump = require('gulp-bump');
 
 gulp.task('compress', function () {
-    "use strict";
     gulp.src('./accesskey.js')
         .pipe(uglify())
         .pipe(rename('accesskey.min.js'))
@@ -12,14 +13,12 @@ gulp.task('compress', function () {
 });
 
 gulp.task('bump', function (params) {
-    "use strict";
     gulp.src(['./package.json'])
         .pipe(bump())
         .pipe(gulp.dest('./'));
 })
 
 gulp.task('bump:minor', function () {
-    "use strict";
     gulp.src(['./package.json'])
         .pipe(bump({
             type : 'minor'
@@ -28,7 +27,6 @@ gulp.task('bump:minor', function () {
 })
 
 gulp.task('bump:major', function () {
-    "use strict";
     gulp.src(['./package.json'])
         .pipe(bump({
             type : 'major'
@@ -37,6 +35,5 @@ gulp.task('bump:major', function () {
 })
 
 gulp.task('default', function () {
-    "use strict";
     gulp.run('compress');
 })
