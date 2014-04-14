@@ -2,7 +2,7 @@
   "name": "accesskey",
   "title": "Accesskey",
   "description": "Adds a hint to the title attribute of elements that support accesskey shortcuts",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "accesskey.js",
   "author": {
     "name": "Gabriel Izaias",
