@@ -35,5 +35,9 @@ gulp.task('bump:major', function () {
 })
 
 gulp.task('default', function () {
-    gulp.run('compress');
+    gulp.watch([
+        './accesskey.js'
+    ], [
+        'compress'
+    ]);
 })
