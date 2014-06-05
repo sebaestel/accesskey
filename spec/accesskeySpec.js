@@ -1,0 +1,3 @@
+describe('Accesskey.js', function(){
+
+});
