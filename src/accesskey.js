@@ -24,6 +24,12 @@
     return {
         getBrowser : function () {
             return browserArray[1] || undefined;
+        },
+        getOS : function () {
+            return ua.indexOf('macintosh') !== -1 ? 'macintosh' :
+                   ua.indexOf('windows') !== -1 ? 'windows' :
+                   ua.indexOf('linux') !== -1 ? 'linux' :
+                   undefined;
         }
     };
 }));
