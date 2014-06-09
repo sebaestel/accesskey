@@ -35,4 +35,33 @@ describe('Accesskey.js', function(){
             }
         });
     });
+
+    describe('OS detection', function() {
+        // User Agent used on the OS tests
+        var ua = window.navigator.userAgent.toLowerCase();
+
+        it('should equal to `windows` when on Microsoft Windows', function(){
+            if (ua.indexOf('windows') > 0) {
+                expect(Accesskey.getOS()).toEqual('windows');
+            } else {
+                expect(Accesskey.getOS()).not.toEqual('windows');
+            }
+        });
+
+        it('should equal to `macintosh` when on Apple Mac OS', function(){
+            if (ua.indexOf('macintosh') > 0) {
+                expect(Accesskey.getOS()).toEqual('macintosh');
+            } else {
+                expect(Accesskey.getOS()).not.toEqual('macintosh');
+            }
+        });
+
+        it('should equal to `linux` when on Linux', function(){
+            if (ua.indexOf('linux') > 0) {
+                expect(Accesskey.getOS()).toEqual('linux');
+            } else {
+                expect(Accesskey.getOS()).not.toEqual('linux');
+            }
+        });
+    });
 });
