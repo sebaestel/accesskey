@@ -9,28 +9,47 @@
         root.Accesskey = factory(root.b);
     }
 }(this, function (b) {
+    console.log(b);
 /**
- * User Agent
+ * Browser userAgent
+ *
  * @type {String}
  */
-    var ua = window.navigator.userAgent.toLowerCase();
+    var userAgent = window.navigator.userAgent.toLowerCase();
 
 /**
- * An array containing the browser lowercase name and its version
- * @type {RegExp}
+ * Detect which browser is being used
+ *
+ * @param  {String} ua Optional userAgent
+ * @return {String}    The lowercase browser name
  */
-    var browserArray = /(chrome)(?:.*chrome)?[ \/]([\w.]+)/.exec(ua) || /(safari)(?:.*version)?[ \/]([\w.]+)/.exec(ua) || /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(ua) || /(ie) ([\w.]+)/.exec(ua) || !/compatible/.test(ua) && /(firefox)(?:.*firefox)?[ \/]([\w.]+)/.exec(ua) || []
+    function getBrowser(ua) {
+        var ua = ua || userAgent;
+        return /(chrome)(?:.*chrome)?[ \/]([\w.]+)/.exec(ua)[1]
+                || /(safari)(?:.*version)?[ \/]([\w.]+)/.exec(ua)[1]
+                || /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(ua)[1]
+                || /(ie) ([\w.]+)/.exec(ua)[1]
+                || !/compatible/.test(ua) && /(firefox)(?:.*firefox)?[ \/]([\w.]+)/.exec(ua)[1]
+                || undefined;
+    }
+
+/**
+ * Detect the OS being used
+ *
+ * @param  {String} ua Optional userAgent
+ * @return {String}    The lowercase OS name
+ */
+    function getOS(ua) {
+        var ua = ua || userAgent;
+        return ua.indexOf('macintosh') !== -1 ? 'macintosh'
+                : ua.indexOf('windows') !== -1 ? 'windows'
+                : ua.indexOf('linux') !== -1 ? 'linux'
+                : undefined;
+    }
 
     return {
-        getBrowser : function () {
-            return browserArray[1] || undefined;
-        },
-        getOS : function () {
-            return ua.indexOf('macintosh') !== -1 ? 'macintosh' :
-                   ua.indexOf('windows') !== -1 ? 'windows' :
-                   ua.indexOf('linux') !== -1 ? 'linux' :
-                   undefined;
-        }
+        getBrowser : getBrowser,
+        getOS : getOS
     };
 }));
 
