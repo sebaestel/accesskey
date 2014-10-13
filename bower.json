@@ -1,0 +1,19 @@
+{
+  "name": "accesskey.js",
+  "main": "accesskey.js",
+  "version": "2.0.1",
+  "homepage": "https://github.com/gabrielizaias/accesskey.js",
+  "authors": [
+    "Gabriel Izaias <gabriel.izaias@gmail.com>"
+  ],
+  "description": "Adds a hint to the title attribute of elements that support accesskey shortcuts.",
+  "keywords": [
+    "accesskey",
+    "accessibility"
+  ],
+  "license": "CCPL",
+  "ignore": [
+    "**/.*",
+    "test"
+  ]
+}
