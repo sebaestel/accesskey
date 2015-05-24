@@ -6,11 +6,11 @@
   "main": "dist/accesskey.js",
   "author": {
     "name": "Gabriel Izaias",
-    "url": "http://gabrielizias.com"
+    "url": "https://izaias.co"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gabrielizias/accesskey.git"
+    "url": "https://github.com/gabrielizaias/accesskey.git"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
