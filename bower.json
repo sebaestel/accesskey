@@ -1,6 +1,6 @@
 {
   "name": "accesskey.js",
-  "main": "accesskey.js",
+  "main": "dist/accesskey.js",
   "version": "2.0.1",
   "homepage": "https://github.com/gabrielizaias/accesskey.js",
   "authors": [

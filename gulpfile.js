@@ -6,10 +6,11 @@ var gulp = require('gulp'),
     bump = require('gulp-bump');
 
 gulp.task('uglify', function () {
-    gulp.src('./accesskey.js')
+    gulp.src('./src/accesskey.js')
+        .pipe(gulp.dest('./dist'))
         .pipe(uglify())
         .pipe(rename('accesskey.min.js'))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('bump', function (params) {
@@ -36,7 +37,7 @@ gulp.task('bump:major', function () {
 
 gulp.task('default', function () {
     gulp.watch([
-        './accesskey.js'
+        './src/accesskey.js'
     ], [
         'uglify'
     ]);
