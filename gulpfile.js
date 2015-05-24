@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     bump = require('gulp-bump');
 
-gulp.task('compress', function () {
+gulp.task('uglify', function () {
     gulp.src('./accesskey.js')
         .pipe(uglify())
         .pipe(rename('accesskey.min.js'))
@@ -38,6 +38,6 @@ gulp.task('default', function () {
     gulp.watch([
         './accesskey.js'
     ], [
-        'compress'
+        'uglify'
     ]);
 })
