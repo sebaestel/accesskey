@@ -1,8 +1,8 @@
 {
-  "name": "accesskey.js",
+  "name": "accesskey",
   "main": "dist/accesskey.js",
   "version": "2.0.1",
-  "homepage": "https://github.com/gabrielizaias/accesskey.js",
+  "homepage": "https://github.com/gabrielizaias/accesskey",
   "authors": [
     "Gabriel Izaias <gabriel.izaias@gmail.com>"
   ],
